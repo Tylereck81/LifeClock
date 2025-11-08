@@ -86,7 +86,6 @@ def main():
     life_expectancy = float(country_data[get_gender()])
     time = (age/life_expectancy)*24
 
-    print(time)
     hour = int(time)
     min = round((time - hour)*60)
     print("Time: ",hour,":",min)
