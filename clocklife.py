@@ -88,6 +88,7 @@ def main():
 
     hour = int(time)
     min = round((time - hour)*60)
+    if min <10: min = str("0"+str(min))
     print("Time: ",hour,":",min)
 
 
