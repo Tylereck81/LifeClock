@@ -62,6 +62,7 @@ def get_DOB():
             d = datetime.strptime(date,"%d/%m/%Y")
             today = datetime.today()
 
+
             if d>today: 
                 print("Date entered should be before today")
                 print()
@@ -94,6 +95,7 @@ def load_data():
     if cache.exists(): 
         mtime = datetime.fromtimestamp(cache.stat().st_mtime)
         age_days = (datetime.now() - mtime).days
+
 
         if age_days <=MAX_CACHE_AGE_DAYS: 
             print("Accessing Cache")
@@ -134,6 +136,9 @@ def main():
 
     hour = int(time)
     min = round((time - hour)*60)
+    if min == 60: 
+        hour+=1 
+        min = 0
     if min <10: min = str("0"+str(min))
     print("Time: ",hour,":",min)
     
